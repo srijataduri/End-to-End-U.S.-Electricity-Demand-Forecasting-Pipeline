@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment Variables (NEVER COMMIT)
+.env
+.env.*
+!.env.example   # keep example file
+
+# Airflow
+airflow/logs/
+airflow/plugins/__pycache__/
+*.sqlite
+airflow.db
+airflow.cfg
+webserver_config.py
+standalone_admin_password.txt
+
+# dbt
+dbt/electricity_forecast/target/
+dbt/electricity_forecast/dbt_packages/
+dbt/electricity_forecast/logs/
+dbt/.user.yml
+dbt/profiles.yml   # VERY IMPORTANT
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+*.out
+
+# Database
+*.db
+*.sqlite3
+
+# Secrets (NEVER COMMIT)
+secrets.yaml
+secrets.yml
+credentials.json
+service-account.json
+
+# Docker
+postgres-db-volume/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Backup files
+*.bak
