@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: electricity_raw
+    database: USER_DB_HIPPO
+    schema: ELECTRICITY_RAW
+    tables:
+      - name: EIA_HOURLY_DEMAND
+      - name: EIA_DAILY_DEMAND

@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: raw
+    database: USER_DB_HIPPO
+    schema: ELECTRICITY_RAW
+    tables:
+      - name: EIA_HOURLY_DEMAND
+        description: "Raw electricity demand data from EIA API"
+        columns:
+          - name: PERIOD_DATE
+            description: "Timestamp of the demand reading"
+            tests:
+              - not_null
+          - name: RESPONDENT
+            description: "Region code (US48, CISO, etc.)"
+            tests:
+              - not_null
+          - name: VALUE
+            description: "Demand value in MWh"
+            tests:
+              - not_null
+
+models:
+  - name: stg_eia_hourly_demand
+    description: "Cleaned and standardized EIA hourly demand data"
+    columns:
+      - name: PERIOD_DATE
+        description: "Timestamp of the demand reading"
+        tests:
+          - not_null
+      - name: DEMAND_VALUE
+        description: "Electricity demand in MWh"
+        tests:
+          - not_null
+      - name: RESPONDENT
+        description: "Region code"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['US48', 'CISO', 'MISO', 'PJM']
+
+  - name: stg_demand_by_region
+    description: "Aggregated demand by region and hour"
+    columns:
+      - name: PERIOD_DATE
+        tests:
+          - not_null
+      - name: RESPONDENT
+        tests:
+          - not_null
+      - name: TOTAL_DEMAND
+        tests:
+          - not_null

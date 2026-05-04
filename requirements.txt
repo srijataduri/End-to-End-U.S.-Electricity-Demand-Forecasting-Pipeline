@@ -1,0 +1,22 @@
+# Data Processing
+pandas==2.2.3
+numpy==1.26.4
+
+# Snowflake
+snowflake-connector-python==3.10.0
+
+# API
+requests==2.32.3
+
+# dbt (for local development)
+dbt-snowflake==1.8.4
+dbt-core==1.8.8
+
+# Development
+jupyter==1.0.0
+ipython==8.15.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
