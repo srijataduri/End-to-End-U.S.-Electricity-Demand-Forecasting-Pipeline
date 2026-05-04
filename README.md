@@ -1,6 +1,6 @@
 # Electricity Demand Forecasting - End-to-End Data Pipeline
 
-**SJSU Data Engineering Graduate Project (DATA 226)**  
+**SJSU Data Engineering Graduate Project**  
 **Objective**: Production-ready pipeline for electricity demand forecasting using real-time EIA data
 
 ## 🎯 Project Overview
